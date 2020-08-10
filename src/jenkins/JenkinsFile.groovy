@@ -1,4 +1,4 @@
-job('Path-finder-dsl-job'){
+job('PFinder-DSL-job'){
     description("First jenkins file")
     scm{
         git("https://github.com/AravindSundarraj/path-finder.git", 'master')
