@@ -12,15 +12,6 @@ pipeline{
             }
             }
         }
-        stage('Deploying Stage Environment'){
-        steps
-        {
-        build job: 'path-finder-project'
-        
-        echo " deploy the job path-finder-project"
-
-        }
-        }
 
 
     }
