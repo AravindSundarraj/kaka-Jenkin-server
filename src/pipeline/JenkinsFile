@@ -1,21 +1,18 @@
 pipeline{
     agent any
     stages {
-        stage('init'){
+        stage('Build Application'){
             steps{
-                echo 'Jenkins pipeline test'
+                sh 'mvn -f path-finder/pom.xml clean package'
+            }
+            post{
+            success{
+            echo "Now Archiving the Artifacts"
+            archiveArtifacts artifacts: '**/*.jar'
+            }
             }
         }
-        stage('build'){
-            steps{
-                echo 'build the pipeline'
-            }
-        }
-        stage('deploy'){
-            steps{
-                echo "deploy the pipeline"
-            }
-        }
+
 
     }
 }
